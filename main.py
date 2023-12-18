@@ -95,4 +95,4 @@ def delete_cafe(id, name):
     return render_template('delete_cafe.html', id=id, name=name)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
