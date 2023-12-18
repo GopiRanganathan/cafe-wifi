@@ -1,0 +1,126 @@
+{% include 'header.html' %}
+
+<section>
+    <div class="container text-center">
+        <h1 class="display-5 fw-bold my-5">Add New Cafe</h1>
+        {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <p class="text-center">{{ message }}</p>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+    <form action="{{url_for('new_cafe')}}" method="POST" >
+        <div class="row g-3 align-items-center mb-2 justify-content-center">
+            <div class="col-sm-2 col-4">
+              <label for="cafe_name" class="col-form-label">Cafe name</label>
+            </div>
+            <div class="col-auto col-sm-4">
+              <input type="text" id="cafe_name" name="cafe_name" placeholder="type cafe name" class="form-control"  required>
+            </div>
+          </div>
+          
+          <div class="row g-3 align-items-center mb-2 justify-content-center">
+            <div class="col-sm-2 col-4">
+              <label for="map" class="col-form-label" 
+              >Map URL</label>
+            </div>
+            <div class="col-auto col-sm-4">
+              <input type="text" id="map" class="form-control" name="map_url" placeholder="Type map url here" required>
+            </div>
+          </div>
+
+          <div class="row g-3 align-items-center mb-2 justify-content-center">
+            <div class="col-sm-2 col-4">
+              <label for="location" class="col-form-label">Location</label>
+            </div>
+            <div class="col-auto col-sm-4">
+              <input type="text" id="location" class="form-control" placeholder="e.g. london" name="location" required>
+            </div>
+          </div>
+
+          <div class="row g-3 align-items-center mb-2 justify-content-center">
+            <div class="col-sm-2 col-4">
+              <label for="image_url" class="col-form-label">Image URL</label>
+            </div>
+            <div class="col-auto col-sm-4">
+              <input type="text" id="image_url" class="form-control" name="image_url" placeholder="type image url here" required>
+            </div>
+          </div>
+
+          <div class="row g-3 align-items-center mb-2 justify-content-center">
+            <div class="col-sm-2 col-4">
+              <label for="price" class="col-form-label">Coffee Price</label>
+            </div>
+            <div class="col-auto col-sm-4">
+              <input type="text" id="price" class="form-control" name="price" placeholder="e.g. £2.75" required>
+            </div>
+          </div>
+
+          <div class="row g-3 align-items-center mb-2 justify-content-center">
+            <div class="col-sm-2 col-4">
+              <label for="seats" class="col-form-label">Seats</label>
+            </div>
+            <div class="col-auto col-sm-4">
+              <input type="text" id="seats" class="form-control" name="seats" placeholder="e.g. 20-30" required>
+            </div>
+          </div>
+
+          <div class="row g-3 align-items-center mb-2 justify-content-center">
+            <div class="col-sm-2 col-4">
+              <label for="wifi" class="col-form-label">Has Wi-Fi?</label>
+            </div>
+            <div class="col-auto col-sm-4">
+                <input type="radio" class="btn-check" name="wifi" id="wifi1" autocomplete="off" value="1" checked>
+                <label class="btn btn-sm btn-outline-brown" for="wifi1">yes</label>
+                
+                <input type="radio" class="btn-check" name="wifi" id="wifi2" value="0" autocomplete="off">
+                <label class="btn btn-sm btn-outline-brown" for="wifi2">no</label>
+            </div>
+          </div>
+
+          <div class="row g-3 align-items-center mb-2 justify-content-center">
+            <div class="col-sm-2 col-4">
+              <label for="toilet" class="col-form-label">Has Toilet?</label>
+            </div>
+            <div class="col-auto col-sm-4">
+                <input type="radio" class="btn-check" name="toilet" id="toilet1" autocomplete="off" value="1" checked>
+                <label class="btn btn-sm btn-outline-brown" for="toilet1">yes</label>
+                
+                <input type="radio" class="btn-check" name="toilet" id="toilet2" value="0" autocomplete="off">
+                <label class="btn btn-sm btn-outline-brown" for="toilet2">no</label>
+            </div>
+          </div>
+
+          <div class="row g-3 align-items-center mb-2 justify-content-center">
+            <div class="col-sm-2 col-4">
+              <label for="sockets" class="col-form-label">Has Sockets?</label>
+            </div>
+            <div class="col-auto col-sm-4">
+                <input type="radio" class="btn-check" name="sockets" id="sockets1" autocomplete="off" value="1" checked>
+                <label class="btn btn-sm btn-outline-brown" for="sockets1">yes</label>
+                
+                <input type="radio" class="btn-check" name="sockets" id="sockets2" value="0" autocomplete="off">
+                <label class="btn btn-sm btn-outline-brown" for="sockets2">no</label>
+            </div>
+          </div>
+
+          <div class="row g-3 align-items-center mb-2 justify-content-center">
+            <div class="col-sm-2 col-4">
+              <label for="calls" class="col-form-label">Can take calls?</label>
+            </div>
+            <div class="col-auto col-sm-4">
+                <input type="radio" class="btn-check" name="calls" id="calls1" autocomplete="off" value="1" checked>
+                <label class="btn btn-sm btn-outline-brown" for="calls1">yes</label>
+                
+                <input type="radio" class="btn-check" name="calls" id="calls2" value="0" autocomplete="off">
+              <label class="btn btn-sm btn-outline-brown" for="calls2">no</label>  
+            </div>
+          </div>
+
+          <input type="submit" class="btn btn-lg btn-outline-brown my-3">
+    </form>
+</div>
+</section>
+
+{% include 'footer.html' %}

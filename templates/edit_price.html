@@ -1,0 +1,21 @@
+{% include 'header.html' %}
+<section>
+    <div class="container text-center">
+        <h1 class="display-5 fw-bold my-5">{{name}}</h1>
+    <form action="{{url_for('edit_price', id=id, name=name)}}" method="POST" >
+
+        <div class="row g-3 align-items-center mb-2 justify-content-center">
+            <div class="col-sm-2 col-4">
+              <label for="price" class="col-form-label">Coffee Price</label>
+            </div>
+            <div class="col-auto col-sm-4">
+              <input type="text" id="price" class="form-control" name="price" placeholder="e.g. £2.75" required>
+            </div>
+          </div>
+
+             
+              <input type="submit" value="Update Price" class="btn btn-lg btn-outline-brown my-3">
+        </form>
+    </div>
+    </section>
+{% include 'footer.html' %}
